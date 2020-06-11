@@ -1,6 +1,6 @@
 <template>
       <!-- 子导航栏 -->
-    <div class="cover">
+    <div class="cover" v-loading="flag">
     <div v-show="status=='已发布'">
         <p>请复制以下链接进行分享或扫描二维码</p>
         <el-input disabled v-model="url">
@@ -21,7 +21,8 @@ export default {
       status: '',
       url: '',
       getQuestionnaireStatusReq: {},
-      deadline: ''
+      deadline: '',
+      flag: false
     }
   },
   created () {
@@ -85,6 +86,7 @@ export default {
           cancelButtonText: '取消',
           type: 'warning'
         }).then(() => {
+          this.flag = true
           this.$http.post('publish', this.getQuestionnaireStatusReq).then(
             response => {
               this.status = '已发布'
@@ -94,6 +96,7 @@ export default {
             type: 'success',
             message: '发布成功!'
           })
+          this.flag = false
         }).catch(() => {
           this.$message({
             type: 'info',

@@ -9,12 +9,18 @@ import Edit from '../components/Edit.vue'
 import Myform from '../components/Myform.vue'
 import Stat from '../components/Stat.vue'
 import Navigation from '../components/Navigation.vue'
+import e404 from '../components/404.vue'
+import e500 from '../components/500.vue'
+import Preview from '../components/preview.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   { path: '/', redirect: '/login' },
   { path: '/login', component: Login },
+  { path: '/404', component: e404 },
+  { path: '/500', component: e500 },
+  { path: '/preview/:id', component: Preview },
   { path: '/myform/:userName/:id', component: Myform },
   {
     path: '/home',

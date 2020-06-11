@@ -29,6 +29,12 @@ axios.interceptors.response.use(
       window.sessionStorage.removeItem('token')
       this.$router.push('/login')
     }
+    if (error.response.status === 500) {
+      this.$router.push('/500')
+    }
+    if (error.response.status === 404) {
+      this.$router.push('/404')
+    }
     return Promise.reject(error)
   })
 Vue.prototype.$http = axios

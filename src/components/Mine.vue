@@ -173,6 +173,9 @@ export default {
 .isC{
   color:#F56C6C;
 }
+i:hover{
+  background-color: #F2F6FC;
+}
   .el-card {
       margin: 3% 0 0 5%;
       float: left;

@@ -1,5 +1,6 @@
 <template>
   <el-container class="home-container">
+    <link rel="stylesheet" href="../assets/fonts/iconfont.css">
     <!-- 头部区域 -->
     <el-header>
       <div>
@@ -10,7 +11,7 @@
         <el-menu-item index="/mine">我的问卷</el-menu-item>
         <el-menu-item index="/welcome">客服中心</el-menu-item>
      </el-menu>
-      <p style="margin-right:0">{{"您好，"+userName}}</p>
+      <p style="margin-right:0"><i class="iconfont icon-user" style="margin-right:2px"></i>{{userName}}</p>
       <el-button type="info" @click="logout">退出</el-button>
     </el-header>
     <!-- 页面主体区域 -->
@@ -36,7 +37,19 @@ export default {
 }
 
 </script>
-
+<style>
+/* 在全局CSS里引用: */
+/* 滚动条宽度 */
+::-webkit-scrollbar {
+ width: 7px;
+ height: 10px;
+}
+/* 滚动条的滑块 */
+::-webkit-scrollbar-thumb {
+ background-color: #a1a3a9;
+ border-radius: 3px;
+}
+</style>
 <style lang="less" scoped>
 .home-container{
     height: 100%;

@@ -1,5 +1,6 @@
 <template>
     <el-container>
+      <link rel="stylesheet" href="../assets/fonts/iconfont.css">
       <!-- 子导航栏 -->
     <el-header>
       <el-menu :default-active="$route.path" class="el-menu-demo" mode="horizontal" :router="true">
@@ -7,7 +8,7 @@
         <el-menu-item :index="publishPath">投放</el-menu-item>
         <el-menu-item :index="statPath">统计</el-menu-item>
      </el-menu>
-    <el-button @click='preview(myindex)'>预览</el-button>
+    <el-button @click='preview(myindex)'><i class="iconfont icon-showpassword" style="margin-right:2px"></i>预览</el-button>
     <el-button @click='del(myindex)'>开始回收</el-button>
     </el-header>
     <router-view></router-view>
@@ -58,13 +59,13 @@ export default {
                 message: '已取消编辑'
               })
             })
-          }
+          } else { this.$router.push({ path: '/edit/' + this.myindex }) }
         }
       ).catch(e => { console.log(e) })
     },
     // 预览
     preview (index) {
-      this.$router.push({ path: '/myform/' + this.$store.state.userName + '/' + this.myindex })
+      this.$router.push({ path: '/preview/' + index })
     },
     del (index) {
       this.$confirm('此操作将永久删除该问卷, 是否继续?', '提示', {

@@ -19,7 +19,8 @@
     "vue-router": "^3.1.6",
     "vuedraggable": "^2.11.0",
     "vuex": "^3.4.0",
-    "qrcodejs2": ""
+    "qrcodejs2": "",
+    "vuescroll": ""
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.3.0",
