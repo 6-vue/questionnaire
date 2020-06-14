@@ -68,9 +68,11 @@ export default {
         const res = await this.$http.post('login', this.loginForm)
         if (res.status !== 200) {
           this.resetLoginForm()
+          this.loading = false
           return this.$message.error('登陆请求失败失败,请重新输入账号')
         }
         if (res.data.token === '') {
+          this.loading = false
           return this.$message.error('密码错误,请重新输入密码')
         }
         this.$message.success({ message: '登陆成功', duration: 1000 })

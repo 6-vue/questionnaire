@@ -1,0 +1,54 @@
+卷 Windows7 的文件夹 PATH 列表
+卷序列号为 A2A7-A8AC
+C:.
+│  App.vue
+│  main.js
+│  myApp.txt
+│  vue.config.js
+│  
+├─assets
+│  │  404.png
+│  │  500.png
+│  │  logo.png
+│  │  logo2.png
+│  │  phone.png
+│  │  
+│  ├─css
+│  │      global.css
+│  │      
+│  └─fonts
+│          debug.log
+│          demo.css
+│          demo_fontclass.html
+│          demo_symbol.html
+│          demo_unicode.html
+│          iconfont.css
+│          iconfont.eot
+│          iconfont.js
+│          iconfont.svg
+│          iconfont.ttf
+│          iconfont.woff
+│          
+├─components
+│      404.vue
+│      500.vue
+│      Edit.vue
+│      Home.vue
+│      Login.vue
+│      Mine.vue
+│      Myform.vue
+│      Navigation.vue
+│      preview.vue
+│      publish.vue
+│      Stat.vue
+│      Welcome.vue
+│      
+├─plugins
+│      element.js
+│      
+├─router
+│      index.js
+│      
+└─vuex
+        store.js
+        

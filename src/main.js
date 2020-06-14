@@ -19,6 +19,7 @@ axios.interceptors.request.use(config => {
   return config
 })
 // 添加响应拦截器
+const that = this
 axios.interceptors.response.use(
   response => {
     return response
@@ -27,13 +28,13 @@ axios.interceptors.response.use(
     console.log(error)
     if (error.response.status === 401) {
       window.sessionStorage.removeItem('token')
-      this.$router.push('/login')
+      that.$router.push('/login')
     }
     if (error.response.status === 500) {
-      this.$router.push('/500')
+      that.$router.push('/500')
     }
     if (error.response.status === 404) {
-      this.$router.push('/404')
+      that.$router.push('/404')
     }
     return Promise.reject(error)
   })
