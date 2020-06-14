@@ -62,9 +62,9 @@ export default {
     },
     // 登录按钮
     login () {
-      this.loading = true
       this.$refs.loginFormRef.validate(async valid => {
         if (!valid) return
+        this.loading = true
         const res = await this.$http.post('login', this.loginForm)
         if (res.status !== 200) {
           this.resetLoginForm()
